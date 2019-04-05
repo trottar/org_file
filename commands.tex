@@ -1,0 +1,590 @@
+% Created 2019-04-02 Tue 01:50
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue}
+\author{Richard L. Trotta III}
+\date{\today}
+\title{Code Commands}
+\hypersetup{
+ pdfauthor={Richard L. Trotta III},
+ pdftitle={Code Commands},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.5.1 (Org mode 9.1.14)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Chrome}
+\label{sec:org7d1e380}
+\begin{itemize}
+\item new tab, C-t
+\item open closed tab, C+shift-t
+\item reload page, C-r
+\item next tabs, C-TAB
+\item previous tabs, C+shift-TAB
+\item go to search bar, C-l
+\item close current tab, C-w
+\item open downloads, C-j
+\item open history, C-h
+\item open link in new tab, C-CLICK
+\begin{itemize}
+\item Select link with TAB then C-ENTER to open in new tab
+\end{itemize}
+\item search page, C-f (shift+enter to cycle options)
+\item go to previous/next page, M-(left/right arrows)
+\end{itemize}
+\section{Linux}
+\label{sec:orgaf80f18}
+\begin{itemize}
+\item suspend current activity, C-z
+\item reset desktop enviroment, M-F2 r
+\item to switch desktop enviroments, logout then select enviroment
+\item see all running jobs in terminal, jobs
+\item resume suspended activity in foreground, fg \%\# (where \# is job number)
+\item resume suspended activity in background, bg \%\# (where \# is job number)
+\item kill a job, kill \%\# (where \# is job number)
+\item find file in directory, find -name "<filename>"
+\item make python or shell script work, chmod u+x <script>
+\item run python script, python <script>.py
+\item see size of file, du -h
+\item see size of file, ls -ltrh
+\item see path of directories, ls -la
+\item see amount of data processes, top -u <username>
+\item see last commands, history
+\item give anyone permission to edit home directory, chmod o+rw /home/<username> (works for individual directories and files)
+\item take away permission to edit home directory, chmod o-rw /home/<username> (works for individual directories and files)
+\item to give permission to members of group to read home directory, drwxr-x
+\item by default jlab has most secure permissions on home directory, drwx
+\item procedures (ie source root version) automatically on login, emacs \textasciitilde{}/.login
+\item to check ram usage use the htop program, htop (hit q to quit)
+\end{itemize}
+\section{Emacs}
+\label{sec:org97e12f0}
+\begin{itemize}
+\item undo, C-x u (or simply C-/)
+\item redo, C-g C-\_
+\item save, C-x C-s
+\item Save buffer as different file, C-x C-w
+\item Save all open buffers, C-x s
+\item Insert another file's content into current one, C-x i
+\item exit (no save), C-x C-c
+\item load .emacs file, M-x load-file
+\item next line, C-n
+\item previous line, C-p
+\item Move one character forward, C-f
+\item Move one word forward, M-f
+\item Move one word backward, M-b
+\item Move to start of a line, C-a
+\item Move to end of a line, C-e
+\item Move to start of a sentence, M-a
+\item Move to end of a sentence, M-e
+\item Move one page down, C-v (pgDn)
+\item Move one page up, M-v (pgUp)
+\item Move to beginning of file, M-<
+\item Move to end of file, M->
+\item Mark (highlight) text, C-space (C-@)
+\item Select all, C-x h
+\item Select paragraph, M-h
+\item copy, M-w
+\item paste, C-y
+\item cut, C-w
+\item delete word, M-d
+\item delete line, C-k
+\item delete sentence, M-k
+\item search (forward), C-s (C-s to see next instance)
+\item search (backward), C-r (C-r to see next instance)
+\item replace word, M-\% (press '!' to replace all)
+\item spell check, M-x (type ispell in mini-buffer)
+\begin{itemize}
+\item a, correct
+\item r, replace
+\end{itemize}
+\item center line, M-o M-s
+\item change mode (ie c++, java, etc.), M-x (then type; c-mode, java-mode, etc.)
+\item bold, M-o b
+\item italic, M-o i
+\item underline, M-o u
+\item default, M-o d
+\item tab, C-q TAB
+\item keep indentation, C-j
+\item indent multiple lines, C-u <TAB>
+\item Find difference between two files, M-x diff (then enter names of files)
+\item Switch buffer, C-x b (TAB then type buffer name from list of avaliable)
+\item Kill buffer, C-x k  (TAB then type buffer name from list of avaliable)
+\item See all open buffers, C-x C-b
+\item Open different file in current buffer, C-x C-f
+\item Open buffer in new frame, C-x 5 (type in file name)
+\item Open split window horizontal, C-x 2
+\item Open split window vertical, C-x 3
+\item Close all split windows, C-x 1
+\item Open newly opened file in main buffer, C-x 0
+\item Select next split window, C-x o
+\item Clear bufffers not used in a while, M-x clean-buffer-list
+\item Switch between buffers more easily, M-x ido-mode (to temporarily disable, C-f)
+\item Open terminal in emacs, M-x ansi-term (then hit ENTER)
+\begin{itemize}
+\item to use limited C-x commands, use C-c <singlecharacter> (e.g. C-c o == C-x o)
+\end{itemize}
+\item Use mouse in -nw, M-x xterm
+\item Update buffer if changes occur, C-x C-v (then hit ENTER)
+\item Auto update buffer if changes occur, M-x (then type global-auto-revert-mode)
+\item Customize emacs, M-x customize
+\item Customize emacs with search, M-x customize-group
+\item \textasciitilde{}/.emacs is the file with custom settings
+\item See and download packages, M-x list-packages
+\item Enter dired (directory) mode, C-x C-f ENTER
+\item In dired mode\ldots{}
+\begin{itemize}
+\item to delete a file\ldots{}
+\item d (which marks for deletion)
+\item x (deletes marked items)
+\item to create a directory, t
+\item to create a file, C-x C-f (then save)
+\item refresh buffer, g
+\item run shell command on file, select file then ! (will be prompted to shell command)
+\item to copy files, S-c
+\item rename file, S-r
+\item to mark files, m (then can run multiple shell commands if you want)
+\item to unmark files, u
+\item to unmark all files, S-u
+\item to mark/unmark inverse files, t
+\item mark all directories, -/
+\item mark all files, -/ then t
+\item search for expression, S-a (go to next with M-,)
+\item change sorting of directory, s (will cycle time of edit and alphabetical)
+\item make dired editable, C-x C-q
+\item to exit, C-c C-c
+\item to abort changes, C-c ESC
+\item M-\% is usable here
+\end{itemize}
+\item See buffer list, C-x C-b (similar to dired)
+\item Search buffer for expression, M-x occur (in buffer list)
+\item Make names more distinct with uniqify
+\item Use -scratch- to edit files and such, it is erased upon leaving emacs
+\item Find a word in any file
+\begin{itemize}
+\item recersively, M-x rgrep
+\item just current directory, M-x lgrep
+\end{itemize}
+\item Begin macro, C-x (
+\item End macro, C-x )
+\item Run macro, C-x e
+\item Macro editor, C-x C-k e
+\item Comment out selected area, M-;
+\item Align lines of code, M-x align or M-x align-regexp (then enter what to align, e.g. // to align comments)
+\item Page up/down in other buffer, M-pg(Up/Down)
+\item Open calender, C-c C-d
+\end{itemize}
+\subsection{Org Mode}
+\label{sec:org526cf3d}
+\begin{itemize}
+\item Used with emacs to create lists and some other cool features
+\item convert document, C-c C-e
+\item open links(i.e. left mouse click), C-c C-o
+\item move the order of item list, M-(up/down)
+\item move indentation, M-(left/right)
+\item mark item todo, S-(right)
+\item mark item done, S-(left)
+\item set deadline to item, C-c C-d
+\item tag item, C-c C-c (while cursor on item)
+\item collaspe bullet, TAB
+\item collaspe/open all bullets, S-TAB
+\item bullet on next line, M-ENTER
+\item reset org to fix issues, C-u M-x org-reload
+\end{itemize}
+\section{Root}
+\label{sec:orgb56205c}
+\begin{itemize}
+\item Object Oriented Concepts
+\begin{itemize}
+\item Members: a “has a” relationship to the class.
+\item Inheritance: an “is a” relationship to the class.
+\item Class: the description of a “thing” in the system
+\item Object: instance of a class
+\item Methods: functions for a class
+\end{itemize}
+\item The Framework Organization
+\end{itemize}
+\begin{center}
+\includegraphics[angle=0,width=15cm]{/home/trottar/Pictures/FrameworkOrganization.png}
+\end{center}
+\begin{itemize}
+\item After starting root (i.e. >root)
+\begin{itemize}
+\item to quit, .q
+\item to load file, .L macro.C
+\item to load and excecute file, .x macro.C
+\item to compile and excecute file, .x macro.C++
+\item to open browser to see histograms, TBrowser b
+\begin{itemize}
+\item Left click
+\begin{itemize}
+\item select, drag, resize objects
+\end{itemize}
+\item Right click
+\begin{itemize}
+\item context menu, class::name, methods
+\end{itemize}
+\item Middle click
+\begin{itemize}
+\item activate canvas, freezes event status bar
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item Reading \& Storing Data in Root
+\begin{itemize}
+\item Data can be read from files/database/network
+\item Data is generally stored as a TTree/TNtuple (similar to a table with rows and columns )
+\item Each row represents an event
+\item Each column represents a quantity
+\item Trees can be created from ASCII files.
+\end{itemize}
+\item TH1F *name = new TH1F(”name",”Title”, Bins, lowest bin, highest bin)
+\begin{itemize}
+\item Fill with x data, h1->Fill(x)
+\item Draw histogram, h1->Draw()
+\item Draw another histogram on same plot, h1->Draw("same")
+\item Mean, h1.GetMean()
+\item Root of Variance, h1.GetRMS()
+\item Maximum bin content, h1.GetMaximum()
+\item Location of maximum, h1.GetMaximumBin(int bin\_number)
+\item Center of bin, h1.GetBinCenter(int bin\_number)
+\item Content of bin, h1.GetBinContent(int bin\_number)
+\item Histogram cosmetics
+\end{itemize}
+\end{itemize}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=0,width=5cm]{/home/trottar/Pictures/MarkerStyle.png}
+h1.SetMarkerStyle()
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=0,width=5cm]{/home/trottar/Pictures/MarkColor.png}
+h1.SetFillColor()
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=0,width=7cm]{/home/trottar/Pictures/LineStyle.png}
+h1->SetLineStyle()
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=0,width=7cm]{/home/trottar/Pictures/LineColor.png}
+h1.SetLineColor()
+\end{figure}
+\begin{itemize}
+\item Canvas: an area mapped to a window
+\begin{itemize}
+\item Creates a new canvas with width equal to w number of pixels and height equal to h number of pixels, c1 = new TCanvas(“c1”,”Title, w, h)
+\item Divides the canvas to 4 pads, c1->Divide(2,2)
+\item Select the 3rd Pad, c1->cd(3)
+\item You can set grid along x and y axis, c1->SetGridx() or c1->SetGridy()
+\item You can also set log scale plots, c1->SetLogy()
+\end{itemize}
+\item TH2F *name = new TH2F(”name",”Title”, xBins, low xbin, up xbin, yBins, low ybin, up y bin)
+\begin{itemize}
+\item Fill with x and y data, h12->Fill(x,y)
+\item Draw histogram, h12->Draw()
+\end{itemize}
+\item TH3F *name = new TH3F(”name",”Title”, xBins, low xbin, up xbin, yBins, low ybin, up ybin, zBins, low zbin, up zbin)
+\begin{itemize}
+\item Fill with x, y and z data, h123->Fill(x,y,z)
+\item Draw histogram, h123->Draw()
+\end{itemize}
+\item Histogram Drawing Options
+\begin{itemize}
+\item " SAME": Superimpose on previous picture in the same pad.
+\item " CYL": Use cylindrical coordinates.
+\item " POL": Use polar coordinates.
+\item " SPH": Use spherical coordinates.
+\item " PSR": Use pseudo-rapidity/phi coordinates.
+\item " LEGO": Draw a lego plot with hidden line removal.
+\item " LEGO1": Draw a lego plot with hidden surface removal.
+\item " LEGO2": Draw a lego plot using colors to show the cell contents.
+\item " SURF": Draw a surface plot with hidden line removal.
+\item " SURF1": Draw a surface plot with hidden surface removal.
+\item " SURF2": Draw a surface plot using colors to show the cell contents.
+\item " SURF3": Same as SURF with a contour view on the top.
+\item " SURF4": Draw a surface plot using Gouraud shading.
+\item “ SURF5”: Same as SURF3 but only the colored contour is drawn.
+\end{itemize}
+\item Graph Drawing Options
+\end{itemize}
+\begin{center}
+\includegraphics[angle=0,width=10cm]{/home/trottar/Pictures/DrawOpt.png}
+\end{center}
+\begin{itemize}
+\item Graph with error bars, gr = new TGraphErrors(n,x,y,errorx,errory)
+\item Graph polar plot,  TGraphPolar * grP1 = new TGraphPolar(1000,r,theta)
+\item ROOT Tree
+\begin{itemize}
+\item Store large quantities of same-class objects
+\item TTree class is optimized to reduce disk space and enhance access speed
+\item TTree can hold all kind of data
+\item TNtuple is a TTree that is limited to only hold floating-point numbers
+\item If we do not use TTree, we need to
+\begin{itemize}
+\item read each event in its entirety into memory
+\item extract the parameters from the event
+\item Compute quantities from the same
+\item fill a histogram
+\end{itemize}
+\item Prints the content of the tree, T->Print()
+\item Scans the rows and columns, T->Scan()
+\item Draw a branch of tree, T->Draw(“x”)
+\item Apply cuts
+\begin{itemize}
+\item Draw “x” when “x>0”, T->Draw(“x”,”x>0”)
+\item Draw “x” when both x >0 and y >0, T->Draw(“x”,”x>0 \&\& y>0”)
+\end{itemize}
+\item Superimpose “y” on “x”, T->Draw(“y”,” “,”same”)
+\item Make “y vs x” 2d scatter plot, T->Draw(“y:x”)
+\item Make “z:y:x” 3d plot, T->Draw(“z:y:x”)
+\item Plot calculated quantity, T->Draw(“sqrt(x*x+y*y)”)
+\item Dump a root branch to a histogram, T->Draw(“x>>h1”)
+\end{itemize}
+\item To deal with number of large Root files with same trees
+\begin{itemize}
+\item name of the tree is T, TChain chain("T")
+\item To chain root file1, chain.Add("file1.root")
+\item To chain root file1, chain.Add("file1.root")
+\item You can draw “x” from all the files in the chain at the same time, chain.Draw("x")
+\end{itemize}
+\item Fitting with \href{http://roofit.sourceforge.net/}{RooFit}
+\begin{itemize}
+\item RooFit packages provide a toolkit for modeling the expected distribution of events in a physics analysis
+\item Models can be used to perform likelihood fits, produce plots, and generate "toy Monte Carlo" samples for various studies
+\end{itemize}
+\item TSelector
+\begin{itemize}
+\item root [0] TFile *f = TFile::Open("treefile.root")
+\item root [1] TTree *t = (TTree *) f->Get("T")
+\item root [2] t->MakeSelector("MySelector")
+\item root [3] .!ls MySelector*
+\item MySelector.C  MySelector.h
+\end{itemize}
+\end{itemize}
+\section{Batch Job}
+\label{sec:org4ef413f}
+\begin{itemize}
+\item run batchscript, jsub <batchscript>
+\item find where files about batch are found (e.g. -.err), ls \textasciitilde{}/.farm\_out/
+\item see job info, jobinfo <jobindex\#>
+\item cancel job, jkill <jobindex\#>
+\item cancel all jobs, jkill 0
+\end{itemize}
+\section{Python}
+\label{sec:orgf997117}
+\begin{itemize}
+\item Pyroot import root file
+\end{itemize}
+\begin{verbatim}
+#!/usr/bin/env python
+
+#import ROOT as R
+from ROOT import TCanvas, TPad, TFile, TPaveLabel, TPaveText
+from ROOT import gROOT
+from rootpy.interactive import wait
+import numpy as np
+
+c1 = TCanvas( 'c1', 'Histogram Drawing Options', 200, 10, 700, 900 )
+
+pad1 = TPad( 'pad1', 'The pad with the function',  0.03, 0.62, 0.50, 0.92, 21 )
+pad2 = TPad( 'pad2', 'The pad with the histogram', 0.51, 0.62, 0.98, 0.92, 21 )
+pad3 = TPad( 'pad3', 'The pad with the histogram', 0.03, 0.02, 0.97, 0.57, 21 )
+pad1.Draw()
+pad2.Draw()
+pad3.Draw()
+
+f = TFile.Open("TDISpion.root","read")
+f.ls()
+
+title = TPaveLabel( 0.1, 0.94, 0.9, 0.98,
+		     'Drawing options for one dimensional histograms' )
+title.SetFillColor( 16 )
+title.SetTextFont( 52 )
+title.Draw()
+
+#
+# Draw histogram hpx in first pad with the default option.
+pad1.cd()
+pad1.GetFrame().SetFillColor( 18 )
+hpx = gROOT.FindObject( 'hypi' )
+hpx.SetFillColor( 45 )
+hpx.DrawCopy()
+label1 = TPaveLabel( -3.5, 700, -1, 800, 'Default option' )
+label1.SetFillColor( 42 )
+label1.Draw()
+#
+# Draw hpx as a lego. Clicking on the lego area will show
+# a "transparent cube" to guide you rotating the lego in real time.
+pad2.cd()
+hpx.DrawCopy( 'lego1' )
+label2 = TPaveLabel( -0.72, 0.74, -0.22, 0.88, 'option Lego1' )
+label2.SetFillColor( 42 )
+label2.Draw()
+label2a = TPaveLabel( -0.93, -1.08, 0.25, -0.92, 'Click on lego to rotate' )
+label2a.SetFillColor( 42 )
+label2a.Draw()
+#
+# Draw hpx with its errors and a marker.
+pad3.cd()
+pad3.SetGridx()
+pad3.SetGridy()
+pad3.GetFrame().SetFillColor( 18 )
+hpx.SetMarkerStyle( 21 )
+hpx.Draw( 'e1p' )
+label3 = TPaveLabel( 2, 600, 3.5, 650, 'option e1p' )
+label3.SetFillColor( 42 )
+label3.Draw()
+#
+# The following illustrates how to add comments using a PaveText.
+# Attributes of text/lines/boxes added to a PaveText can be modified.
+# The AddText function returns a pointer to the added object.
+pave = TPaveText( -3.78, 500, -1.2, 750 )
+pave.SetFillColor( 42 )
+t1 = pave.AddText( 'You can move' )
+t1.SetTextColor( 4 )
+t1.SetTextSize( 0.05 )
+pave.AddText( 'Title and Stats pads' )
+pave.AddText( 'X and Y axis' )
+pave.AddText( 'You can modify bin contents' )
+pave.Draw()
+c1.Update()
+
+#leaf = f.Get("hypi")
+
+#print(leaf)
+#print(f)
+
+#print(c1)
+
+wait()
+
+\end{verbatim}
+\section{GitHub}
+\label{sec:org7465844}
+\begin{itemize}
+\item add name to git, git config \(--\)global user.name '<name>'
+\item add email to git, git config \(--\)global user.email '<email>'
+\item change editor used for git comments, git config \(--\)global core.editor "emacs"
+\item see global configuration, git config \(--\)list \(--\)global
+\item clone a remote repo (https) to your local repo, git clone <remoteRepoWebAddress>
+\item clone a remote repo (https) to your local repo with desired directory name, git clone <remoteRepoWebAddress> <directoryName>
+\item clone one specific branch, git clone \(--\)single-branch \(--\)branch <branchname> <repo>
+\item see changes to local repo, git status
+\item pull all submodules, git submodule update \(--\)init \(--\)recursive
+\item to clone a repo with submodules,
+\begin{itemize}
+\item check that the repo submodule links in github work
+\item git clone <repo with submodules>
+\begin{itemize}
+\item if only certain branch submodule links work you can clone one specific branch, git clone \(--\)single-branch \(--\)branch <branchname> <repo>
+\end{itemize}
+\item git submodule update \(--\)init \(--\)recursive
+\item git submodule update \(--\)recursive \(--\)remote
+\begin{itemize}
+\item if HEAD detached from commit\ldots{}
+\begin{itemize}
+\item git branch -a (should see HEAD detached)
+\item check if the head is really detached, git symbolic-ref HEAD (should result in \emph{fatal: ref HEAD is not a symbolic ref})
+\item git remote update
+\item change branch to master, git checkout master
+\item git pull
+\item git branch -a (HEAD detached should disappear but you won't be able to switch back to other branch)
+\item git checkout <originalBranch> (should be fixed)
+\item git rebase master
+\item git add <any conflicts>
+\item git rebase master (should be good then)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item bring up window to see all commits, gitk
+\item see differences from previous version of file, git diff <file>
+\item to ignore file from git\ldots{}
+\begin{itemize}
+\item open .gitignore
+\item add file name to this
+\item this works for directories as well (add /directory to .gitignore)
+\end{itemize}
+\item prepare change for commit, git add <file>
+\item pull one file from one branch to another, git checkout <branch-with-file> <file> (run from branch you want file)
+\item add all deleted files not tracked yet, git add .
+\item remove file from tracked list, git rm \(--\)cached <file>
+\item reset modified file to unmerged path (ie no longer ready for commt), git reset HEAD <file> (do a git add after this then, may have to do a few times)
+\item discard change from commit, git checkout <file>
+\item commit all added items to local repo, git commit -author "Richard-Trotta <trotta@cua.edu>" -m "<some message>"
+\item check where remote repo is and name of repo, git remote -v
+\item remove all files that are untracked, git clean -f
+\item remove tracked/untracked file, git checkout \(--\) <file>
+\item how to push local repo to remote repo,
+\begin{itemize}
+\item git status
+\item git add -all (for all changes)
+\item git commit (do commit procedure above)
+\item git pull origin <branch>
+\item git push origin <branch>
+\end{itemize}
+\item create branch from local repo, git branch <newbranch>
+\item delete local branch from local repo, git branch -d <branch> (-D forces)
+\item see all branches, git branch -avv
+\item change branch, git checkout <differentBranch>
+\item if branches of repo aren't showing up, git fetch <repo>
+\item go to remote branch version of local repo, git checkout \(--\)track origin/<branch>
+\item delete remote branch, git push branch origin 	-delete <branch>
+\item specify a new remote repo (ie upstream), git remote add upstream <remoteRepo>
+\item set up upstream where push will default, git push -set-upstream origin <branch>
+\item block push to a remote repo, git remote set-url -push <remoterepo> <messagereminder>
+\item replace remote repo (ie upstream), git remote set-url upstream <URLforRemoteRepo>
+\item rename current branch, git branch -m <newbranchname>
+\item how to create new branch in local repo and push to remote repo,
+\begin{itemize}
+\item git branch <newbranch>
+\item git checkout <newbranch>
+\item git pull origin <newbranch>
+\item git push origin <newbranch>
+\end{itemize}
+\item look at project history, git log -oneline
+\item see what is different between repo and open submodule, git diff -cached -submodule
+\item when copying a directory (ie submodule) into your main directory and this submodule is already part of a different repo do the following,
+\begin{itemize}
+\item git submodule status (to see if any submodules heads are not your repo)
+\item cd <submodule>
+\item git remote -v (to see which repo submodule is in)
+\item git remote set-url origin \url{https://github.com/}<username>/<repo> (will point submodule to your repo)
+\item git remote -v (you should see origin now assigned to your repo)
+\item cd ../<outofsubmodule>
+\item git rm -cached <submodule>
+\item git status (check to make sure your submodule is untracked)
+\item git commit
+\item git push
+\item git submodule status (your submodule should no longer be on here because it is no longer in your repo, only locally accessible)
+\item git add <submodule>
+\item git commit
+\item git push
+\item git submodule status (double check the submodule is properly in your repo now)
+\end{itemize}
+\item to list the file types taking up the most space in your repository, git lfs migrate info (Note: you need the lfs program)
+\item git has a strict 100mb limit so to convert some file types to LFS (i.e. so they can be pushed), git lfs migrate import \(--\)include="<filetype>"
+\item check for large files in your local master branch, git lfs migrate info --include-ref=master
+\item check for large files in every branch, git lfs migrate info \(--\)everything
+\end{itemize}
+\end{document}

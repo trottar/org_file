@@ -1,0 +1,40 @@
+* Daily Startup
+** [[https://www.one-tab.com/page/jubLQwNaR-OhDh_nipz2Jg][Chrome email and logbooks]]
+** [[file:$HOME/ResearchNP/ROOTAnalysis/kaonlt_analysis/commands.pdf][Commands Doc]]
+** [[elisp:ansi-term][Emacs Terminal]]
+* To do list [3/10]
+** TODO Figure out TDC leaves
+** TODO Add notes to commands pdf (i.e. python, linux)
+** DONE Learn org-mode in more detail
+** DONE Org mode on my phone
+** DONE Print Dante's Inferno and work on book
+** TODO Work on "Nine Wreaths"
+** TODO Photo copy handwritten notes and voice record them
+** TODO [[http://www.jsallc.org/IF/fellowships.html][JSA Fellowship]]
+** TODO Update kaonLT yields for 4.9 GeV and setup for March
+** TODO EIC plots
+* Articles to read [2/12]
+** DONE [[https://www-theverge-com.cdn.ampproject.org/v/s/www.theverge.com/platform/amp/2018/11/14/18093872/google-assistant-smart-home-broadcast-reply-routines?amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fwww.theverge.com%2F2018%2F11%2F14%2F18093872%2Fgoogle-assistant-smart-home-broadcast-reply-routines][The Google Assistant smart home ecosystem]]
+** TODO [[https://phys-org.cdn.ampproject.org/v/s/phys.org/news/2018-11-mystery-particle-discovery-require-physics.amp?amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fphys.org%2Fnews%2F2018-11-mystery-particle-discovery-require-physics.html][Mystery particle spotted?]]
+** TODO [[https://www.scientificamerican.com/article/schroedingers-bacterium-could-be-a-quantum-biology-milestone/][Schrödinger's Bacterium]]
+** TODO [[https://amp-livescience-com.cdn.ampproject.org/v/s/amp.livescience.com/63392-black-holes-from-past-universes.html?amp_js_v=0.1#amp_tf=From%20%251%24s][Ghosts of Black Holes from Another Universe]]
+** TODO [[https://motherboard-vice-com.cdn.ampproject.org/v/s/motherboard.vice.com/amp/en_us/article/bjbknz/ancient-starlight-just-helped-confirm-the-reality-of-quantum-entanglement?amp_js_v=0.1#amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fmotherboard.vice.com%2Fen_us%2Farticle%2Fbjbknz%2Fancient-starlight-just-helped-confirm-the-reality-of-quantum-entanglement][Ancient Starlight and Entanglement]]
+** TODO [[http://deferentialgeometry.org/][Deferential Geometry]]
+** TODO [[https://physicsfromtheedge.blogspot.com/][QI Blog]]
+** TODO [[https://phys-org.cdn.ampproject.org/v/s/phys.org/news/2018-07-opinion-higgs.amp?amp_js_v=0.1#amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fphys.org%2Fnews%2F2018-07-opinion-higgs.html][We need to talk about the Higgs]]
+** TODO [[https://www-wired-com.cdn.ampproject.org/v/s/www.wired.com/story/ideas-joi-ito-academic-paywalls/amp?amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fwww.wired.com%2Fstory%2Fideas-joi-ito-academic-paywalls%2F][THE QUEST TO TOPPLE SCIENCE-STYMYING ACADEMIC PAYWALLS]]
+** TODO [[https://futurism-com.cdn.ampproject.org/v/s/futurism.com/physics-breakthrough-advanced-electronics-excitons/amp?amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Ffuturism.com%2Fphysics-breakthrough-advanced-electronics-excitons%2F][A Physics Breakthrough Could Lead to a New Generation of Advanced Electronics]]
+** TODO [[https://www.sciencealert.com/scientists-have-stimulated-hawking-radiation-in-a-lab-analogue-of-a-black-hole][We Just Got Lab-Made Evidence of Stephen Hawking's Greatest Prediction About Black Holes]]
+** DONE [[https://motherboard-vice-com.cdn.ampproject.org/v/s/motherboard.vice.com/amp/en_us/article/7x3ed9/darpa-is-researching-quantized-inertia-a-theory-of-physics-many-think-is-pseudoscience?usqp=mq331AQCCAE%3D&amp_js_v=0.1#aoh=15487455575778&amp_ct=1548745573656&referrer=https%3A%2F%2Fwww.google.com&amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fmotherboard.vice.com%2Famp%2Fen_us%2Farticle%2F7x3ed9%2Fdarpa-is-researching-quantized-inertia-a-theory-of-physics-many-think-is-pseudoscience%23aoh%3D15487455575778%26amp_ct%3D1548745573656%26referrer%3Dhttps%253A%252F%252Fwww.google.com%26amp_tf%3DFrom%2520%25251%2524s][DARPA Is Researching Quantized Inertia, a Theory Many Think Is Pseudoscience]]
+* Papers to read [0/11]
+** TODO [[https://drive.google.com/open?id=1r-Lb2VIowNO1-qLGPR9-FtRCdmgiav0h][Quantum Paradox]]
+** TODO [[https://drive.google.com/open?id=1nSCQc_ybPeOJnNTwNNZJYcQFD4tT8zsR][William Sidis Dark Matter]]
+** TODO [[https://drive.google.com/open?id=1-rdbDPQISDCwlcynfC8e2MTfVG1uJ4a0][Group Theory TOE]]
+** TODO [[https://drive.google.com/open?id=1MdINThIPsKHxHUFJLg-9EJlysy6Yqlvo][Hawking Multiverse]]
+** TODO [[https://drive.google.com/open?id=1WYerJ7fLFJBu8laaJWz77lK15fsCVliJ][Gauge Theory of Gravity]]
+** TODO [[https://drive.google.com/open?id=1DGqzmy3WNmDeQXPnlh3IGm5ekWZaHNnR][Intro to Two Photon Exchange]]
+** TODO [[https://drive.google.com/open?id=1BaKFk7q5OxvHFl6U6lJtZpXrIzRt_a-c][Two Photon Exchange]]
+** TODO [[https://drive.google.com/open?id=0B-zQ85m0lBJdazBIS0ViSV8xbFhaM1Z4ZG5DNVJ4MU16ellB][GRV Structure Function]]
+** TODO [[https://drive.google.com/open?id=1onBNidNqXyHcQRANYKLVz6afRb4eNa1G][Inertia from an Asymmetric Casimir Effect]]
+** TODO [[https://drive.google.com/open?id=1ZaM5SO4qs2ahnV1OMlqldOb3jTdzUsCK][Quantised inertia from relativity and the uncertainty principle]]
+** TODO [[https://drive.google.com/open?id=1jWonQIqkuiwDFraLDkxrlk-AEM9pifwd][Kaon FF LQCD Calculation]]
