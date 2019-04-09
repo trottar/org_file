@@ -131,6 +131,9 @@
     - to exit, C-c C-c
     - to abort changes, C-c ESC
     - M-% is usable here
+  - You can save the current desktop, M-x desktop-save
+  - reload one saved in another directory, M-x desktop-change-dir
+  - reverts to the desktop previously reloaded, M-x desktop-revert
   - See buffer list, C-x C-b (similar to dired)
   - Search buffer for expression, M-x occur (in buffer list)
   - Make names more distinct with uniqify
@@ -282,6 +285,21 @@
   - cancel all jobs, jkill 0
 * Python
   - Pyroot import root file
+    # Exit making plots with q
+    # plt.savefig(foutname)
+    # plt.clf()
+    # if (drawPlot == True):
+    #     option = raw_input()
+    #     if (option == "q"):
+    #         sys.exit("\nLeaving script\n")
+    #     elif (option == "n"):
+    #         plt.show()
+    #         plt.savefig(foutname)
+    #         plt.clf()
+    #     else:
+    #         print("Invalid entry\n")
+    #         continue
+
 #+ATTR_LATEX: :float nil
 #+BEGIN_SRC python
 #!/usr/bin/env python
