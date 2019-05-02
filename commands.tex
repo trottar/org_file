@@ -1,4 +1,4 @@
-% Created 2019-04-09 Tue 03:18
+% Created 2019-05-01 Wed 14:29
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -32,7 +32,7 @@
 
 
 \section{Chrome}
-\label{sec:orga507fd7}
+\label{sec:orge7c76cb}
 \begin{itemize}
 \item new tab, C-t
 \item open closed tab, C+shift-t
@@ -51,7 +51,7 @@
 \item go to previous/next page, M-(left/right arrows)
 \end{itemize}
 \section{Linux}
-\label{sec:org8a8a01f}
+\label{sec:orgf6d2068}
 \begin{itemize}
 \item suspend current activity, C-z
 \item reset desktop enviroment, M-F2 r
@@ -63,20 +63,51 @@
 \item find file in directory, find -name "<filename>"
 \item make python or shell script work, chmod u+x <script>
 \item run python script, python <script>.py
-\item see size of file, du -h
+\item see size of directory, du -h
+\item see max size of directory, df -h
 \item see size of file, ls -ltrh
 \item see path of directories, ls -la
 \item see amount of data processes, top -u <username>
 \item see last commands, history
+\item to uncompress a gzip tar file (.tgz or .tar.gz), tar xzf file.tar.gz
+\item to uncompress a bzip2 tar file (.tbz or .tar.bz2) to extract the contents., tar xjf file.tar.bz2
+\item to uncompressed tar file (.tar), tar xf file.tar
+\item to uncompress tar file (.tar) to another directory, tar xC /var/tmp -f file.tar
 \item give anyone permission to edit home directory, chmod o+rw /home/<username> (works for individual directories and files)
 \item take away permission to edit home directory, chmod o-rw /home/<username> (works for individual directories and files)
 \item to give permission to members of group to read home directory, drwxr-x
 \item by default jlab has most secure permissions on home directory, drwx
 \item procedures (ie source root version) automatically on login, emacs \textasciitilde{}/.login
 \item to check ram usage use the htop program, htop (hit q to quit)
+\item rsync
+\begin{itemize}
+\item basic syntax, rsync options source destination
+\item common options\ldots{}
+\begin{itemize}
+\item verbose (show file sync info), -v
+\item copies data recursively, -r
+\item archive mode (recursive but also preserves timestamps and permissions), -a
+\item compress file data, -z
+\item human-readable, -h
+\item specify a protocol, -e
+\item show progress, -P (or \(--\)progress)
+\item sync a <dest> and <source> so that they match (file or directory exists in <dest> but not <source> so we delete the ones in <dest>), \(--\)delete
+\end{itemize}
+\item sync a single file on a local machine, rsync -zvh <source> <dest>
+\item sync a directory on local computer, rsync -avzh <source> <dest>
+\item sync files and directory over ssh, rsync -avzhe ssh <root>@<ip>:<source> <dest>
+\item specify file specific parameters, below is an example where we include files starting with R and exclude all else
+\begin{itemize}
+\item rsync -avze ssh \(--\)include 'R*' \(--\)exclude '*' <root>@<ip>:<source> <dest>
+\end{itemize}
+\item set max file size to be transferred, rsync -avzhe \(--\)max-size='200k' <source> <dest>
+\item automatically delete source files after successful transfer, rsync \(--\)remove-source-files <anyoptions> <source> <dest>
+\item do a test (dry) run to make sure it works properly, rsync \(--\)dry-run <anyoptions> <source> <dest>
+\item set bandwidth limit and transfer file, rsync \(--\)bwlimit=100 -avzhe ssh <source> <dest>
+\end{itemize}
 \end{itemize}
 \section{Emacs}
-\label{sec:orgb592fc3}
+\label{sec:orgca109b3}
 \begin{itemize}
 \item undo, C-x u (or simply C-/)
 \item redo, C-g C-\_
@@ -99,14 +130,18 @@
 \item Move one page up, M-v (pgUp)
 \item Move to beginning of file, M-<
 \item Move to end of file, M->
+\item Jump to the beginning of the current function, M-C-a
+\item Jump to the end of the current function, M-C-e
+\item Jump to the end of braces, M-C-f
+\item Jump to the beginning of braces, M-C-b
 \item Mark (highlight) text, C-space (C-@)
 \item Select all, C-x h
 \item Select paragraph, M-h
 \item copy, M-w
 \item paste, C-y
 \item cut, C-w
-\item delete word, M-d
-\item delete line, C-k
+\item delete word, M-d or C-BACK
+\item delete line, C-k or SHIFT+C-BACK
 \item delete sentence, M-k
 \item search (forward), C-s (C-s to see next instance)
 \item search (backward), C-r (C-r to see next instance)
@@ -173,6 +208,12 @@
 \item to exit, C-c C-c
 \item to abort changes, C-c ESC
 \item M-\% is usable here
+\item Replace across multiple files (in dired mode)
+\begin{itemize}
+\item mark all files, t
+\item start a grep session to mark files, Q
+\item accept all changes, !
+\end{itemize}
 \end{itemize}
 \item You can save the current desktop, M-x desktop-save
 \item reload one saved in another directory, M-x desktop-change-dir
@@ -196,7 +237,7 @@
 \item Open calender, C-c C-d
 \end{itemize}
 \subsection{Org Mode}
-\label{sec:orgaae13b2}
+\label{sec:orgafcc718}
 \begin{itemize}
 \item Used with emacs to create lists and some other cool features
 \item convert document, C-c C-e
@@ -212,181 +253,8 @@
 \item bullet on next line, M-ENTER
 \item reset org to fix issues, C-u M-x org-reload
 \end{itemize}
-\section{Root}
-\label{sec:org25f5907}
-\begin{itemize}
-\item Object Oriented Concepts
-\begin{itemize}
-\item Members: a “has a” relationship to the class.
-\item Inheritance: an “is a” relationship to the class.
-\item Class: the description of a “thing” in the system
-\item Object: instance of a class
-\item Methods: functions for a class
-\end{itemize}
-\item The Framework Organization
-\end{itemize}
-\begin{center}
-\includegraphics[angle=0,width=15cm]{/home/trottar/Pictures/FrameworkOrganization.png}
-\end{center}
-\begin{itemize}
-\item After starting root (i.e. >root)
-\begin{itemize}
-\item to quit, .q
-\item to load file, .L macro.C
-\item to load and excecute file, .x macro.C
-\item to compile and excecute file, .x macro.C++
-\item to open browser to see histograms, TBrowser b
-\begin{itemize}
-\item Left click
-\begin{itemize}
-\item select, drag, resize objects
-\end{itemize}
-\item Right click
-\begin{itemize}
-\item context menu, class::name, methods
-\end{itemize}
-\item Middle click
-\begin{itemize}
-\item activate canvas, freezes event status bar
-\end{itemize}
-\end{itemize}
-\end{itemize}
-\item Reading \& Storing Data in Root
-\begin{itemize}
-\item Data can be read from files/database/network
-\item Data is generally stored as a TTree/TNtuple (similar to a table with rows and columns )
-\item Each row represents an event
-\item Each column represents a quantity
-\item Trees can be created from ASCII files.
-\end{itemize}
-\item TH1F *name = new TH1F(”name",”Title”, Bins, lowest bin, highest bin)
-\begin{itemize}
-\item Fill with x data, h1->Fill(x)
-\item Draw histogram, h1->Draw()
-\item Draw another histogram on same plot, h1->Draw("same")
-\item Mean, h1.GetMean()
-\item Root of Variance, h1.GetRMS()
-\item Maximum bin content, h1.GetMaximum()
-\item Location of maximum, h1.GetMaximumBin(int bin\_number)
-\item Center of bin, h1.GetBinCenter(int bin\_number)
-\item Content of bin, h1.GetBinContent(int bin\_number)
-\item Histogram cosmetics
-\end{itemize}
-\end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[angle=0,width=5cm]{/home/trottar/Pictures/MarkerStyle.png}
-h1.SetMarkerStyle()
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[angle=0,width=5cm]{/home/trottar/Pictures/MarkColor.png}
-h1.SetFillColor()
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[angle=0,width=7cm]{/home/trottar/Pictures/LineStyle.png}
-h1->SetLineStyle()
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[angle=0,width=7cm]{/home/trottar/Pictures/LineColor.png}
-h1.SetLineColor()
-\end{figure}
-\begin{itemize}
-\item Canvas: an area mapped to a window
-\begin{itemize}
-\item Creates a new canvas with width equal to w number of pixels and height equal to h number of pixels, c1 = new TCanvas(“c1”,”Title, w, h)
-\item Divides the canvas to 4 pads, c1->Divide(2,2)
-\item Select the 3rd Pad, c1->cd(3)
-\item You can set grid along x and y axis, c1->SetGridx() or c1->SetGridy()
-\item You can also set log scale plots, c1->SetLogy()
-\end{itemize}
-\item TH2F *name = new TH2F(”name",”Title”, xBins, low xbin, up xbin, yBins, low ybin, up y bin)
-\begin{itemize}
-\item Fill with x and y data, h12->Fill(x,y)
-\item Draw histogram, h12->Draw()
-\end{itemize}
-\item TH3F *name = new TH3F(”name",”Title”, xBins, low xbin, up xbin, yBins, low ybin, up ybin, zBins, low zbin, up zbin)
-\begin{itemize}
-\item Fill with x, y and z data, h123->Fill(x,y,z)
-\item Draw histogram, h123->Draw()
-\end{itemize}
-\item Histogram Drawing Options
-\begin{itemize}
-\item " SAME": Superimpose on previous picture in the same pad.
-\item " CYL": Use cylindrical coordinates.
-\item " POL": Use polar coordinates.
-\item " SPH": Use spherical coordinates.
-\item " PSR": Use pseudo-rapidity/phi coordinates.
-\item " LEGO": Draw a lego plot with hidden line removal.
-\item " LEGO1": Draw a lego plot with hidden surface removal.
-\item " LEGO2": Draw a lego plot using colors to show the cell contents.
-\item " SURF": Draw a surface plot with hidden line removal.
-\item " SURF1": Draw a surface plot with hidden surface removal.
-\item " SURF2": Draw a surface plot using colors to show the cell contents.
-\item " SURF3": Same as SURF with a contour view on the top.
-\item " SURF4": Draw a surface plot using Gouraud shading.
-\item “ SURF5”: Same as SURF3 but only the colored contour is drawn.
-\end{itemize}
-\item Graph Drawing Options
-\end{itemize}
-\begin{center}
-\includegraphics[angle=0,width=10cm]{/home/trottar/Pictures/DrawOpt.png}
-\end{center}
-\begin{itemize}
-\item Graph with error bars, gr = new TGraphErrors(n,x,y,errorx,errory)
-\item Graph polar plot,  TGraphPolar * grP1 = new TGraphPolar(1000,r,theta)
-\item ROOT Tree
-\begin{itemize}
-\item Store large quantities of same-class objects
-\item TTree class is optimized to reduce disk space and enhance access speed
-\item TTree can hold all kind of data
-\item TNtuple is a TTree that is limited to only hold floating-point numbers
-\item If we do not use TTree, we need to
-\begin{itemize}
-\item read each event in its entirety into memory
-\item extract the parameters from the event
-\item Compute quantities from the same
-\item fill a histogram
-\end{itemize}
-\item Prints the content of the tree, T->Print()
-\item Scans the rows and columns, T->Scan()
-\item Draw a branch of tree, T->Draw(“x”)
-\item Apply cuts
-\begin{itemize}
-\item Draw “x” when “x>0”, T->Draw(“x”,”x>0”)
-\item Draw “x” when both x >0 and y >0, T->Draw(“x”,”x>0 \&\& y>0”)
-\end{itemize}
-\item Superimpose “y” on “x”, T->Draw(“y”,” “,”same”)
-\item Make “y vs x” 2d scatter plot, T->Draw(“y:x”)
-\item Make “z:y:x” 3d plot, T->Draw(“z:y:x”)
-\item Plot calculated quantity, T->Draw(“sqrt(x*x+y*y)”)
-\item Dump a root branch to a histogram, T->Draw(“x>>h1”)
-\end{itemize}
-\item To deal with number of large Root files with same trees
-\begin{itemize}
-\item name of the tree is T, TChain chain("T")
-\item To chain root file1, chain.Add("file1.root")
-\item To chain root file1, chain.Add("file1.root")
-\item You can draw “x” from all the files in the chain at the same time, chain.Draw("x")
-\end{itemize}
-\item Fitting with \href{http://roofit.sourceforge.net/}{RooFit}
-\begin{itemize}
-\item RooFit packages provide a toolkit for modeling the expected distribution of events in a physics analysis
-\item Models can be used to perform likelihood fits, produce plots, and generate "toy Monte Carlo" samples for various studies
-\end{itemize}
-\item TSelector
-\begin{itemize}
-\item root [0] TFile *f = TFile::Open("treefile.root")
-\item root [1] TTree *t = (TTree *) f->Get("T")
-\item root [2] t->MakeSelector("MySelector")
-\item root [3] .!ls MySelector*
-\item MySelector.C  MySelector.h
-\end{itemize}
-\end{itemize}
 \section{Batch Job}
-\label{sec:orgba290b4}
+\label{sec:org84e31b3}
 \begin{itemize}
 \item run batchscript, jsub <batchscript>
 \item find where files about batch are found (e.g. -.err), ls \textasciitilde{}/.farm\_out/
@@ -395,97 +263,9 @@ h1.SetLineColor()
 \item cancel all jobs, jkill 0
 \end{itemize}
 \section{Python}
-\label{sec:org0edb3a8}
-\begin{itemize}
-\item Pyroot import root file
-\end{itemize}
-
-\begin{verbatim}
-#!/usr/bin/env python
-
-#import ROOT as R
-from ROOT import TCanvas, TPad, TFile, TPaveLabel, TPaveText
-from ROOT import gROOT
-from rootpy.interactive import wait
-import numpy as np
-
-c1 = TCanvas( 'c1', 'Histogram Drawing Options', 200, 10, 700, 900 )
-
-pad1 = TPad( 'pad1', 'The pad with the function',  0.03, 0.62, 0.50, 0.92, 21 )
-pad2 = TPad( 'pad2', 'The pad with the histogram', 0.51, 0.62, 0.98, 0.92, 21 )
-pad3 = TPad( 'pad3', 'The pad with the histogram', 0.03, 0.02, 0.97, 0.57, 21 )
-pad1.Draw()
-pad2.Draw()
-pad3.Draw()
-
-f = TFile.Open("TDISpion.root","read")
-f.ls()
-
-title = TPaveLabel( 0.1, 0.94, 0.9, 0.98,
-		     'Drawing options for one dimensional histograms' )
-title.SetFillColor( 16 )
-title.SetTextFont( 52 )
-title.Draw()
-
-#
-# Draw histogram hpx in first pad with the default option.
-pad1.cd()
-pad1.GetFrame().SetFillColor( 18 )
-hpx = gROOT.FindObject( 'hypi' )
-hpx.SetFillColor( 45 )
-hpx.DrawCopy()
-label1 = TPaveLabel( -3.5, 700, -1, 800, 'Default option' )
-label1.SetFillColor( 42 )
-label1.Draw()
-#
-# Draw hpx as a lego. Clicking on the lego area will show
-# a "transparent cube" to guide you rotating the lego in real time.
-pad2.cd()
-hpx.DrawCopy( 'lego1' )
-label2 = TPaveLabel( -0.72, 0.74, -0.22, 0.88, 'option Lego1' )
-label2.SetFillColor( 42 )
-label2.Draw()
-label2a = TPaveLabel( -0.93, -1.08, 0.25, -0.92, 'Click on lego to rotate' )
-label2a.SetFillColor( 42 )
-label2a.Draw()
-#
-# Draw hpx with its errors and a marker.
-pad3.cd()
-pad3.SetGridx()
-pad3.SetGridy()
-pad3.GetFrame().SetFillColor( 18 )
-hpx.SetMarkerStyle( 21 )
-hpx.Draw( 'e1p' )
-label3 = TPaveLabel( 2, 600, 3.5, 650, 'option e1p' )
-label3.SetFillColor( 42 )
-label3.Draw()
-#
-# The following illustrates how to add comments using a PaveText.
-# Attributes of text/lines/boxes added to a PaveText can be modified.
-# The AddText function returns a pointer to the added object.
-pave = TPaveText( -3.78, 500, -1.2, 750 )
-pave.SetFillColor( 42 )
-t1 = pave.AddText( 'You can move' )
-t1.SetTextColor( 4 )
-t1.SetTextSize( 0.05 )
-pave.AddText( 'Title and Stats pads' )
-pave.AddText( 'X and Y axis' )
-pave.AddText( 'You can modify bin contents' )
-pave.Draw()
-c1.Update()
-
-#leaf = f.Get("hypi")
-
-#print(leaf)
-#print(f)
-
-#print(c1)
-
-wait()
-
-\end{verbatim}
+\label{sec:orgf55fe75}
 \section{GitHub}
-\label{sec:orgf41bc13}
+\label{sec:org0677580}
 \begin{itemize}
 \item add name to git, git config \(--\)global user.name '<name>'
 \item add email to git, git config \(--\)global user.email '<email>'
@@ -504,6 +284,13 @@ wait()
 \item if only certain branch submodule links work you can clone one specific branch, git clone \(--\)single-branch \(--\)branch <branchname> <repo>
 \end{itemize}
 \item git submodule update \(--\)init \(--\)recursive
+\item if that does not work check .gitmodules to make sure submodule is properly listed. The form should be
+\begin{itemize}
+\item\relax [submodule "<submodulename>"]
+path = <submodulename>
+url = "\url{https://github.com/}<username>/<submodulename>"
+branch = <branch>
+\end{itemize}
 \item git submodule update \(--\)recursive \(--\)remote
 \begin{itemize}
 \item if HEAD detached from commit\ldots{}
@@ -530,6 +317,7 @@ wait()
 \item this works for directories as well (add /directory to .gitignore)
 \end{itemize}
 \item prepare change for commit, git add <file>
+\item discard all local commits on this branch, git reset --hard -u
 \item pull one file from one branch to another, git checkout <branch-with-file> <file> (run from branch you want file)
 \item add all deleted files not tracked yet, git add .
 \item remove file from tracked list, git rm \(--\)cached <file>
@@ -561,7 +349,9 @@ wait()
 \item rename current branch, git branch -m <newbranchname>
 \item how to create new branch in local repo and push to remote repo,
 \begin{itemize}
+\item create new branch on github.com
 \item git branch <newbranch>
+\item git fetch
 \item git checkout <newbranch>
 \item git pull origin <newbranch>
 \item git push origin <newbranch>

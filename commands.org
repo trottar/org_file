@@ -29,17 +29,42 @@
   - find file in directory, find -name "<filename>"
   - make python or shell script work, chmod u+x <script>
   - run python script, python <script>.py
-  - see size of file, du -h
+  - see size of directory, du -h
+  - see max size of directory, df -h
   - see size of file, ls -ltrh
   - see path of directories, ls -la
   - see amount of data processes, top -u <username>
   - see last commands, history
+  - to uncompress a gzip tar file (.tgz or .tar.gz), tar xzf file.tar.gz
+  - to uncompress a bzip2 tar file (.tbz or .tar.bz2) to extract the contents., tar xjf file.tar.bz2
+  - to uncompressed tar file (.tar), tar xf file.tar
+  - to uncompress tar file (.tar) to another directory, tar xC /var/tmp -f file.tar
   - give anyone permission to edit home directory, chmod o+rw /home/<username> (works for individual directories and files)
   - take away permission to edit home directory, chmod o-rw /home/<username> (works for individual directories and files)
   - to give permission to members of group to read home directory, drwxr-x
   - by default jlab has most secure permissions on home directory, drwx
   - procedures (ie source root version) automatically on login, emacs ~/.login
   - to check ram usage use the htop program, htop (hit q to quit)
+  - rsync
+    - basic syntax, rsync options source destination
+    - common options...
+      - verbose (show file sync info), -v
+      - copies data recursively, -r
+      - archive mode (recursive but also preserves timestamps and permissions), -a
+      - compress file data, -z
+      - human-readable, -h
+      - specify a protocol, -e
+      - show progress, -P (or \(--\)progress)
+      - sync a <dest> and <source> so that they match (file or directory exists in <dest> but not <source> so we delete the ones in <dest>), \(--\)delete
+    - sync a single file on a local machine, rsync -zvh <source> <dest>
+    - sync a directory on local computer, rsync -avzh <source> <dest>
+    - sync files and directory over ssh, rsync -avzhe ssh <root>@<ip>:<source> <dest>
+    - specify file specific parameters, below is an example where we include files starting with R and exclude all else
+      - rsync -avze ssh \(--\)include 'R*' \(--\)exclude '*' <root>@<ip>:<source> <dest>
+    - set max file size to be transferred, rsync -avzhe \(--\)max-size='200k' <source> <dest>
+    - automatically delete source files after successful transfer, rsync \(--\)remove-source-files <anyoptions> <source> <dest>
+    - do a test (dry) run to make sure it works properly, rsync \(--\)dry-run <anyoptions> <source> <dest>
+    - set bandwidth limit and transfer file, rsync \(--\)bwlimit=100 -avzhe ssh <source> <dest>
 * Emacs
   - undo, C-x u (or simply C-/)
   - redo, C-g C-_
@@ -62,14 +87,18 @@
   - Move one page up, M-v (pgUp)
   - Move to beginning of file, M-<
   - Move to end of file, M->
+  - Jump to the beginning of the current function, M-C-a
+  - Jump to the end of the current function, M-C-e
+  - Jump to the end of braces, M-C-f
+  - Jump to the beginning of braces, M-C-b
   - Mark (highlight) text, C-space (C-@)
   - Select all, C-x h
   - Select paragraph, M-h
   - copy, M-w
   - paste, C-y
   - cut, C-w
-  - delete word, M-d
-  - delete line, C-k
+  - delete word, M-d or C-BACK
+  - delete line, C-k or SHIFT+C-BACK
   - delete sentence, M-k
   - search (forward), C-s (C-s to see next instance)
   - search (backward), C-r (C-r to see next instance)
@@ -131,6 +160,10 @@
     - to exit, C-c C-c
     - to abort changes, C-c ESC
     - M-% is usable here
+    - Replace across multiple files (in dired mode)
+      - mark all files, t
+      - start a grep session to mark files, Q
+      - accept all changes, !
   - You can save the current desktop, M-x desktop-save
   - reload one saved in another directory, M-x desktop-change-dir
   - reverts to the desktop previously reloaded, M-x desktop-revert
@@ -163,120 +196,6 @@
   - collaspe/open all bullets, S-TAB
   - bullet on next line, M-ENTER
   - reset org to fix issues, C-u M-x org-reload
-* Root
-  - Object Oriented Concepts
-    - Members: a “has a” relationship to the class.
-    - Inheritance: an “is a” relationship to the class.
-    - Class: the description of a “thing” in the system
-    - Object: instance of a class
-    - Methods: functions for a class
-  - The Framework Organization
-#+ATTR_LATEX: :width 15cm :options angle=0 
-[[file:~/Pictures/FrameworkOrganization.png]]
-  - After starting root (i.e. >root)
-    - to quit, .q
-    - to load file, .L macro.C
-    - to load and excecute file, .x macro.C
-    - to compile and excecute file, .x macro.C++
-    - to open browser to see histograms, TBrowser b
-      - Left click
-	- select, drag, resize objects
-      - Right click
-	- context menu, class::name, methods
-      - Middle click
-	- activate canvas, freezes event status bar
-  - Reading & Storing Data in Root
-    - Data can be read from files/database/network
-    - Data is generally stored as a TTree/TNtuple (similar to a table with rows and columns )
-    - Each row represents an event
-    - Each column represents a quantity
-    - Trees can be created from ASCII files.
-  - TH1F *name = new TH1F(”name",”Title”, Bins, lowest bin, highest bin)
-    - Fill with x data, h1->Fill(x)
-    - Draw histogram, h1->Draw()
-    - Draw another histogram on same plot, h1->Draw("same")
-    - Mean, h1.GetMean()
-    - Root of Variance, h1.GetRMS()
-    - Maximum bin content, h1.GetMaximum()
-    - Location of maximum, h1.GetMaximumBin(int bin_number)
-    - Center of bin, h1.GetBinCenter(int bin_number)
-    - Content of bin, h1.GetBinContent(int bin_number)
-    - Histogram cosmetics
-#+ATTR_LATEX: :width 5cm :options angle=0 :float t :caption h1.SetMarkerStyle()
-[[~/Pictures/MarkerStyle.png]]
-#+ATTR_LATEX: :width 5cm :options angle=0 :float t :caption h1.SetFillColor()
-[[~/Pictures/MarkColor.png]]
-#+ATTR_LATEX: :width 7cm :options angle=0 :float t :caption h1->SetLineStyle()
-[[~/Pictures/LineStyle.png]]
-#+ATTR_LATEX: :width 7cm :options angle=0 :float t :caption h1.SetLineColor()
-[[~/Pictures/LineColor.png]]
-  - Canvas: an area mapped to a window
-    - Creates a new canvas with width equal to w number of pixels and height equal to h number of pixels, c1 = new TCanvas(“c1”,”Title, w, h)
-    - Divides the canvas to 4 pads, c1->Divide(2,2)
-    - Select the 3rd Pad, c1->cd(3)
-    - You can set grid along x and y axis, c1->SetGridx() or c1->SetGridy()
-    - You can also set log scale plots, c1->SetLogy()
-  - TH2F *name = new TH2F(”name",”Title”, xBins, low xbin, up xbin, yBins, low ybin, up y bin)
-    - Fill with x and y data, h12->Fill(x,y)
-    - Draw histogram, h12->Draw()
-  - TH3F *name = new TH3F(”name",”Title”, xBins, low xbin, up xbin, yBins, low ybin, up ybin, zBins, low zbin, up zbin)
-    - Fill with x, y and z data, h123->Fill(x,y,z)
-    - Draw histogram, h123->Draw()
-  - Histogram Drawing Options
-    - " SAME": Superimpose on previous picture in the same pad.
-    - " CYL": Use cylindrical coordinates.
-    - " POL": Use polar coordinates.
-    - " SPH": Use spherical coordinates.
-    - " PSR": Use pseudo-rapidity/phi coordinates.
-    - " LEGO": Draw a lego plot with hidden line removal.
-    - " LEGO1": Draw a lego plot with hidden surface removal.
-    - " LEGO2": Draw a lego plot using colors to show the cell contents.
-    - " SURF": Draw a surface plot with hidden line removal.
-    - " SURF1": Draw a surface plot with hidden surface removal.
-    - " SURF2": Draw a surface plot using colors to show the cell contents.
-    - " SURF3": Same as SURF with a contour view on the top.
-    - " SURF4": Draw a surface plot using Gouraud shading.
-    - “ SURF5”: Same as SURF3 but only the colored contour is drawn.
-  - Graph Drawing Options
-#+ATTR_LATEX: :width 10cm :options angle=0 
-[[~/Pictures/DrawOpt.png]]
-  - Graph with error bars, gr = new TGraphErrors(n,x,y,errorx,errory)
-  - Graph polar plot,  TGraphPolar * grP1 = new TGraphPolar(1000,r,theta)
-  - ROOT Tree
-    + Store large quantities of same-class objects
-    + TTree class is optimized to reduce disk space and enhance access speed
-    + TTree can hold all kind of data
-    + TNtuple is a TTree that is limited to only hold floating-point numbers
-    + If we do not use TTree, we need to
-      - read each event in its entirety into memory
-      - extract the parameters from the event
-      - Compute quantities from the same
-      - fill a histogram
-    + Prints the content of the tree, T->Print()
-    + Scans the rows and columns, T->Scan()
-    + Draw a branch of tree, T->Draw(“x”)
-    + Apply cuts
-      - Draw “x” when “x>0”, T->Draw(“x”,”x>0”)
-      - Draw “x” when both x >0 and y >0, T->Draw(“x”,”x>0 && y>0”)
-    + Superimpose “y” on “x”, T->Draw(“y”,” “,”same”)
-    + Make “y vs x” 2d scatter plot, T->Draw(“y:x”)
-    + Make “z:y:x” 3d plot, T->Draw(“z:y:x”)
-    + Plot calculated quantity, T->Draw(“sqrt(x*x+y*y)”)
-    + Dump a root branch to a histogram, T->Draw(“x>>h1”)
-  - To deal with number of large Root files with same trees
-    - name of the tree is T, TChain chain("T")
-    - To chain root file1, chain.Add("file1.root")
-    - To chain root file1, chain.Add("file1.root")
-    - You can draw “x” from all the files in the chain at the same time, chain.Draw("x")
-  - Fitting with [[http://roofit.sourceforge.net/][RooFit]]
-    - RooFit packages provide a toolkit for modeling the expected distribution of events in a physics analysis
-    - Models can be used to perform likelihood fits, produce plots, and generate "toy Monte Carlo" samples for various studies
-  - TSelector
-    - root [0] TFile *f = TFile::Open("treefile.root")
-    - root [1] TTree *t = (TTree *) f->Get("T")
-    - root [2] t->MakeSelector("MySelector")
-    - root [3] .!ls MySelector*
-    - MySelector.C  MySelector.h
 * Batch Job
   - run batchscript, jsub <batchscript>
   - find where files about batch are found (e.g. -.err), ls ~/.farm_out/
@@ -284,107 +203,6 @@
   - cancel job, jkill <jobindex#>
   - cancel all jobs, jkill 0
 * Python
-  - Pyroot import root file
-    # Exit making plots with q
-    # plt.savefig(foutname)
-    # plt.clf()
-    # if (drawPlot == True):
-    #     option = raw_input()
-    #     if (option == "q"):
-    #         sys.exit("\nLeaving script\n")
-    #     elif (option == "n"):
-    #         plt.show()
-    #         plt.savefig(foutname)
-    #         plt.clf()
-    #     else:
-    #         print("Invalid entry\n")
-    #         continue
-
-#+ATTR_LATEX: :float nil
-#+BEGIN_SRC python
-#!/usr/bin/env python
-
-#import ROOT as R
-from ROOT import TCanvas, TPad, TFile, TPaveLabel, TPaveText
-from ROOT import gROOT
-from rootpy.interactive import wait
-import numpy as np
-
-c1 = TCanvas( 'c1', 'Histogram Drawing Options', 200, 10, 700, 900 )
-
-pad1 = TPad( 'pad1', 'The pad with the function',  0.03, 0.62, 0.50, 0.92, 21 )
-pad2 = TPad( 'pad2', 'The pad with the histogram', 0.51, 0.62, 0.98, 0.92, 21 )
-pad3 = TPad( 'pad3', 'The pad with the histogram', 0.03, 0.02, 0.97, 0.57, 21 )
-pad1.Draw()
-pad2.Draw()
-pad3.Draw()
-
-f = TFile.Open("TDISpion.root","read")
-f.ls()
-
-title = TPaveLabel( 0.1, 0.94, 0.9, 0.98,
-                     'Drawing options for one dimensional histograms' )
-title.SetFillColor( 16 )
-title.SetTextFont( 52 )
-title.Draw()
-
-#
-# Draw histogram hpx in first pad with the default option.
-pad1.cd()
-pad1.GetFrame().SetFillColor( 18 )
-hpx = gROOT.FindObject( 'hypi' )
-hpx.SetFillColor( 45 )
-hpx.DrawCopy()
-label1 = TPaveLabel( -3.5, 700, -1, 800, 'Default option' )
-label1.SetFillColor( 42 )
-label1.Draw()
-#
-# Draw hpx as a lego. Clicking on the lego area will show
-# a "transparent cube" to guide you rotating the lego in real time.
-pad2.cd()
-hpx.DrawCopy( 'lego1' )
-label2 = TPaveLabel( -0.72, 0.74, -0.22, 0.88, 'option Lego1' )
-label2.SetFillColor( 42 )
-label2.Draw()
-label2a = TPaveLabel( -0.93, -1.08, 0.25, -0.92, 'Click on lego to rotate' )
-label2a.SetFillColor( 42 )
-label2a.Draw()
-#
-# Draw hpx with its errors and a marker.
-pad3.cd()
-pad3.SetGridx()
-pad3.SetGridy()
-pad3.GetFrame().SetFillColor( 18 )
-hpx.SetMarkerStyle( 21 )
-hpx.Draw( 'e1p' )
-label3 = TPaveLabel( 2, 600, 3.5, 650, 'option e1p' )
-label3.SetFillColor( 42 )
-label3.Draw()
-#
-# The following illustrates how to add comments using a PaveText.
-# Attributes of text/lines/boxes added to a PaveText can be modified.
-# The AddText function returns a pointer to the added object.
-pave = TPaveText( -3.78, 500, -1.2, 750 )
-pave.SetFillColor( 42 )
-t1 = pave.AddText( 'You can move' )
-t1.SetTextColor( 4 )
-t1.SetTextSize( 0.05 )
-pave.AddText( 'Title and Stats pads' )
-pave.AddText( 'X and Y axis' )
-pave.AddText( 'You can modify bin contents' )
-pave.Draw()
-c1.Update()
-
-#leaf = f.Get("hypi")
-
-#print(leaf)
-#print(f)
-
-#print(c1)
-
-wait()
-
-#+END_SRC
 * GitHub
   - add name to git, git config \(--\)global user.name '<name>'
   - add email to git, git config \(--\)global user.email '<email>'
@@ -400,6 +218,11 @@ wait()
     - git clone <repo with submodules>
       - if only certain branch submodule links work you can clone one specific branch, git clone \(--\)single-branch \(--\)branch <branchname> <repo>
     - git submodule update \(--\)init \(--\)recursive
+    - if that does not work check .gitmodules to make sure submodule is properly listed. The form should be
+      - [submodule "<submodulename>"]
+	path = <submodulename>
+	url = "https://github.com/<username>/<submodulename>"
+	branch = <branch>
     - git submodule update \(--\)recursive \(--\)remote
       - if HEAD detached from commit...
 	- git branch -a (should see HEAD detached)
@@ -419,6 +242,7 @@ wait()
     - add file name to this
     - this works for directories as well (add /directory to .gitignore)
   - prepare change for commit, git add <file>
+  - discard all local commits on this branch, git reset --hard -u
   - pull one file from one branch to another, git checkout <branch-with-file> <file> (run from branch you want file)
   - add all deleted files not tracked yet, git add .
   - remove file from tracked list, git rm \(--\)cached <file>
@@ -447,7 +271,9 @@ wait()
   - replace remote repo (ie upstream), git remote set-url upstream <URLforRemoteRepo>
   - rename current branch, git branch -m <newbranchname>
   - how to create new branch in local repo and push to remote repo,
+    - create new branch on github.com
     - git branch <newbranch>
+    - git fetch
     - git checkout <newbranch>
     - git pull origin <newbranch>
     - git push origin <newbranch>
